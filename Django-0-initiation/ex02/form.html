@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact Form</title>
+	</head>
+	<body>
+		<form>
+			<label>Firstname:</label>
+			<input type="text" id="firstname"><br>
+
+			<label>Name:</label>
+			<input type="text" id="name"><br>
+
+			<label>Phone:</label>
+			<input type="tel" id="phone"><br>
+
+			<label>Age:</label>
+			<input type="number" id="age"><br>
+
+			<label>Email:</label>
+			<input type="email" id="email"><br>
+
+			<label>Student at 42?</label>
+			<input type="checkbox" id="student"><br>
+
+			<label>Gender:</label><br>
+
+			<input type="radio" id="gender_male" value="Male"> Male<br>
+			<input type="radio" id="gender_female" value="Female"> Female<br>
+			<input type="radio" id="gender_other" value="Other"> Other<br>
+			
+			<button type="button" onclick="displayFormContents();">
+				Submit
+			</button>
+		</form>
+		<script src="popup.js"></script>
+	</body>
+</html>
