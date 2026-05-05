@@ -1,225 +1,137 @@
 import sys
-
-from elements import (H1, H2, Body, Br, Div, Elem, Head, Hr, Html, Img,
-                        Li, Meta, Ol, P, Span, Table, Td, Text, Th, Title, Tr, Ul)
+from elements import *
 from Page import Page
 
 
-class TextColors:
+# ---------- Colors ----------
+
+class C:
     RED = '\033[31m'
     GREEN = '\033[32m'
     YELLOW = '\033[33m'
     BLUE = '\033[34m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    WHITE = '\033[37m'
     RESET = '\033[0m'
 
-def print_colored_text(text, color_code):
-    if color_code.upper() in dir(TextColors):
-        color = getattr(TextColors, color_code.upper())
-        print(f"{color}{text}{TextColors.RESET}", file=sys.stdout)
-    else:
-        print(text)
+
+def cprint(text, color):
+    print(f"{color}{text}{C.RESET}")
 
 
-class PageTester():
-    def __init__(self, print_error_msg=False, print_code=False, write_path=None):
-        self.print_error_msg = print_error_msg
-        self.print_code = print_code
-        self.write_path = write_path
+# ---------- Tester ----------
 
-    def test(self):
-        self.__one_Text()
-        self.__test_Html()
-        self.__test_Head()
-        self.__test_Body_Div()
-        self.__test_P()
-        self.__test_Span()
-        self.__test_Ul_Ol()
-        self.__test_Tr()
-        self.__test_Table()
+class PageTester:
 
-    def is_valid(self, page):
-        print_colored_text(page.is_valid(), 'blue')
-        if self.print_error_msg:
-            print_colored_text(f" - {page.error_msg}", 'YELLOW')
-        if self.print_code:
+    def __init__(self, verbose=True, show_code=False):
+        self.verbose = verbose
+        self.show_code = show_code
+        self.total = 0
+        self.passed = 0
+
+    def run(self):
+        self.section("HTML", self.test_html())
+        self.section("HEAD", self.test_head())
+        self.section("BODY/DIV", self.test_body_div())
+        self.section("SPAN", self.test_span())
+        self.section("UL/OL", self.test_ul_ol())
+        self.section("TR", self.test_tr())
+        self.section("TABLE", self.test_table())
+        self.section("TEXT RULE", self.test_single_text())
+        self.section("P", self.test_p())
+
+        print("\n" + "=" * 40)
+        cprint(f"RESULT: {self.passed}/{self.total} passed", C.BLUE)
+
+    # ---------- Core runner ----------
+
+    def check(self, name, page, expected):
+        self.total += 1
+        result = page.is_valid()
+
+        if result == expected:
+            self.passed += 1
+            cprint(f"[OK] {name}", C.GREEN)
+        else:
+            cprint(f"[FAIL] {name}", C.RED)
+            cprint(f"  expected={expected}, got={result}", C.YELLOW)
+            if page.error_msg:
+                cprint(f"  error: {page.error_msg}", C.YELLOW)
+
+        if self.show_code:
             print(page, "\n")
-        if self.write_path:
-            page.write_to_file(self.write_path)
 
-    def __test_Html(self):
-        print("\n{:=^42s}\n".format("Html"))
-        page = Page(
-                    Html([
-                        Head()
-                    ])
-                )
-        self.is_valid(page)
+    def section(self, name, tests):
+        print(f"\n{'='*15} {name} {'='*15}")
+        for name, page, expected in tests:
+            self.check(name, page, expected)
 
-        page = Page(
-                    Html([
-                        Body(),
-                    ])
-                )
-        self.is_valid(page)
+    # ---------- Tests ----------
 
-        page = Page(
-                    Html([
-                        Body(),
-                        Head(Title(Text("test"))),
-                    ])
-                )
-        self.is_valid(page)
+    def test_html(self):
+        return [
+            ("Missing body", Page(Html([Head()])), False),
+            ("Missing head", Page(Html([Body()])), False),
+            ("Wrong order", Page(Html([Body(), Head(Title(Text("x")))])), False),
+            ("Valid html", Page(Html([Head(Title(Text("x"))), Body()])), True),
+        ]
 
-        page = Page(
-                    Html([
-                        Head(Title(Text("test"))),
-                        Body(),
-                    ])
-                )
-        self.is_valid(page)
+    def test_head(self):
+        return [
+            ("Empty head", Page(Head()), False),
+            ("Wrong child", Page(Head(H1(Text("x")))), False),
+            ("Valid head", Page(Head(Title(Text("x")))), True),
+        ]
 
-    def __test_Head(self):
-        print("\n{:=^42s}\n".format("Head"))
-        page = Page(
-                    Head(),
-                )
-        self.is_valid(page)
+    def test_body_div(self):
+        return [
+            ("Body with Title", Page(Body(Title(Text("x")))), False),
+            ("Body with H1", Page(Body(H1(Text("x")))), True),
+        ]
 
-        page = Page(
-                    Head(H1(Text("test"))),
-                )
-        self.is_valid(page)
+    def test_span(self):
+        return [
+            ("Span with Title", Page(Span(Title(Text("x")))), False),
+            ("Span with P", Page(Span(P(Text("x")))), True),
+        ]
 
-        page = Page(
-                    Head(Title(Text("test"))),
-                )
-        self.is_valid(page)
+    def test_ul_ol(self):
+        return [
+            ("Ul wrong child", Page(Ul(Title(Text("x")))), False),
+            ("Ol mixed children", Page(Ol([Li(Text("x")), Ul(Text("x"))])), False),
+            ("Ol valid", Page(Ol(Li(Text("x")))), True),
+        ]
 
-    def __test_Body_Div(self):
-        print("\n{:=^42s}\n".format("Body Div"))
-        page = Page(
-                    Body(Title(Text("test"))),
-                )
-        self.is_valid(page)
+    def test_tr(self):
+        return [
+            ("Tr wrong child", Page(Tr(Li(Text("x")))), False),
+            ("Tr mixed td/th", Page(Tr([Td(Text("x")), Th(Text("x"))])), False),
+            ("Tr valid td", Page(Tr([Td(Text("x")), Td(Text("x"))])), True),
+        ]
+
+    def test_table(self):
+        return [
+            ("Table wrong child", Page(Table(Li(Text("x")))), False),
+            ("Table mixed", Page(Table([Tr(Td(Text("x"))), Td(Text("x"))])), False),
+            ("Table valid", Page(Table([Tr(Td(Text("x"))), Tr(Td(Text("x")))])), True),
+        ]
+
+    def test_single_text(self):
+        return [
+            ("H1 empty", Page(Html([
+                Head(Title(Text("ok"))),
+                Body([H1()])
+            ])), False),
+        ]
+
+    def test_p(self):
+        return [
+            ("P multiple text", Page(P([Text("a"), Text("b")])), True),
+            ("P empty", Page(P()), False),
+            ("P with element", Page(P(H2())), False),
+        ]
 
 
-        page = Page(
-                    Body(H1(Text("test"))),
-                )
-        self.is_valid(page)
-
-    def __test_Span(self):
-        print("\n{:=^42s}\n".format("Span"))
-        page = Page(
-                    Span(Title(Text("test"))),
-                )
-        self.is_valid(page)
-
-
-        page = Page(
-                    Span(P(Text("test"))),
-                )
-        self.is_valid(page)
-
-    def __test_Ul_Ol(self):
-        print("\n{:=^42s}\n".format("Ul Ol"))
-        page = Page(
-                    Ul(Title(Text("test"))),
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    Ol([
-                        Li(Text("test")),
-                        Ul(Text("test")),
-                        ]),
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    Ol(Li(Text("test"))),
-                )
-        self.is_valid(page)
-
-    def __test_Tr(self):
-        print("\n{:=^42s}\n".format("Tr"))
-        page = Page(
-                    Tr(Li(Text("test"))),
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    Tr([
-                        Td(Text("test")),
-                        Th(Text("test")),
-                        ]),
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    Tr([
-                        Td(Text("test")),
-                        Td(Text("test")),
-                        ]),
-                )
-        self.is_valid(page)
-
-    def __test_Table(self):
-        print("\n{:=^42s}\n".format("Table"))
-        page = Page(
-                    Table(Li(Text("test"))),
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    Table([
-                        Tr(Td(Text("test"))),
-                        Td(Td(Text("test"))),
-                        ]),
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    Table([
-                        Tr(Td(Text("test"))),
-                        Tr(Td(Text("test"))),
-                        ]),
-                )
-        self.is_valid(page)
-
-    # Title_H1_H2_Li_Th_Td
-    def __one_Text(self):
-        print("\n{:=^42s}\n".format("Title H1 H2 Li Th Td"))
-        elem = Html([
-                    Head(Title(Text('"Hello ground!"'))),
-                    Body([H1(),])
-                    ])
-        page = Page(elem)
-        self.is_valid(page)
-
-    def __test_P(self):
-        print("\n{:=^42s}\n".format("P"))
-        page = Page(
-                    P([
-                        Text('"again!"'),
-                        Text('"again!"'),
-                    ])
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    P()
-                )
-        self.is_valid(page)
-
-        page = Page(
-                    P(H2())
-                )
-        self.is_valid(page)
+# ---------- Run ----------
 
 if __name__ == "__main__":
-    tester = PageTester(print_error_msg=True, print_code=True)
-    tester.test()
+    tester = PageTester(verbose=True, show_code=False)
+    tester.run()
