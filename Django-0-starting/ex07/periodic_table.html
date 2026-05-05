@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Periodic Table of the Elements</title>
+  <style>
+    body { background-color: #121212; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; margin: 0; }
+    h3 { color: #bb86fc; letter-spacing: 2px; text-align: center; }
+    /* Added a scrollable container wrapper */
+    .table-container { max-width: 100%; overflow-x: auto; padding: 10px 0; }
+    table { border-collapse: separate; border-spacing: 6px; margin: 0 auto; }
+    .element-box { background-color: #1e1e1e; border: 1px solid #333; border-radius: 8px; padding: 10px; width: 110px; height: 130px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: all 0.2s ease-in-out; vertical-align: top; }
+    .element-box:hover { transform: scale(1.08); background-color: #2a2a2a; border-color: #bb86fc; box-shadow: 0 8px 12px rgba(187, 134, 252, 0.2); z-index: 10; cursor: default; }
+    h4 { margin: 0 0 8px 0; color: #03dac6; font-size: 1.1em; text-align: center; border-bottom: 1px solid #333; padding-bottom: 4px; }
+    ul { list-style-type: none; padding: 0; margin: 0; font-size: 0.75em; line-height: 1.4; color: #b0b0b0; }
+    li strong { color: #e0e0e0; }
+    .empty-box { border: none; background: transparent; box-shadow: none; }
+  </style>
+</head>
+<body>
+  <h3>PERIODIC TABLE</h3>
+  <div class="table-container">
+    <table>
+      <tr>
+        <td class="element-box">
+          <h4>Hydrogen</h4>
+          <ul>
+            <li><strong>No:</strong> 1</li>
+            <li><strong>Sym:</strong> H</li>
+            <li><strong>Mass:</strong> 1.00794</li>
+            <li><strong>e⁻:</strong> 1</li>
+          </ul>
+        </td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="element-box">
+          <h4>Helium</h4>
+          <ul>
+            <li><strong>No:</strong> 2</li>
+            <li><strong>Sym:</strong> He</li>
+            <li><strong>Mass:</strong> 4.002602</li>
+            <li><strong>e⁻:</strong> 2</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="element-box">
+          <h4>Lithium</h4>
+          <ul>
+            <li><strong>No:</strong> 3</li>
+            <li><strong>Sym:</strong> Li</li>
+            <li><strong>Mass:</strong> 6.941</li>
+            <li><strong>e⁻:</strong> 2 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Beryllium</h4>
+          <ul>
+            <li><strong>No:</strong> 4</li>
+            <li><strong>Sym:</strong> Be</li>
+            <li><strong>Mass:</strong> 9.012182</li>
+            <li><strong>e⁻:</strong> 2 2</li>
+          </ul>
+        </td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="element-box">
+          <h4>Boron</h4>
+          <ul>
+            <li><strong>No:</strong> 5</li>
+            <li><strong>Sym:</strong> B</li>
+            <li><strong>Mass:</strong> 10.811</li>
+            <li><strong>e⁻:</strong> 2 3</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Carbon</h4>
+          <ul>
+            <li><strong>No:</strong> 6</li>
+            <li><strong>Sym:</strong> C</li>
+            <li><strong>Mass:</strong> 12.0107</li>
+            <li><strong>e⁻:</strong> 2 4</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Nitrogen</h4>
+          <ul>
+            <li><strong>No:</strong> 7</li>
+            <li><strong>Sym:</strong> N</li>
+            <li><strong>Mass:</strong> 14.0067</li>
+            <li><strong>e⁻:</strong> 2 5</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Oxygen</h4>
+          <ul>
+            <li><strong>No:</strong> 8</li>
+            <li><strong>Sym:</strong> O</li>
+            <li><strong>Mass:</strong> 15.9994</li>
+            <li><strong>e⁻:</strong> 2 6</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Fluorine</h4>
+          <ul>
+            <li><strong>No:</strong> 9</li>
+            <li><strong>Sym:</strong> F</li>
+            <li><strong>Mass:</strong> 18.998404</li>
+            <li><strong>e⁻:</strong> 2 7</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Neon</h4>
+          <ul>
+            <li><strong>No:</strong> 10</li>
+            <li><strong>Sym:</strong> Ne</li>
+            <li><strong>Mass:</strong> 20.1797</li>
+            <li><strong>e⁻:</strong> 2 8</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="element-box">
+          <h4>Sodium</h4>
+          <ul>
+            <li><strong>No:</strong> 11</li>
+            <li><strong>Sym:</strong> Na</li>
+            <li><strong>Mass:</strong> 22.989769</li>
+            <li><strong>e⁻:</strong> 2 8 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Magnesium</h4>
+          <ul>
+            <li><strong>No:</strong> 12</li>
+            <li><strong>Sym:</strong> Mg</li>
+            <li><strong>Mass:</strong> 24.305</li>
+            <li><strong>e⁻:</strong> 2 8 2</li>
+          </ul>
+        </td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="empty-box"></td>
+        <td class="element-box">
+          <h4>Aluminium</h4>
+          <ul>
+            <li><strong>No:</strong> 13</li>
+            <li><strong>Sym:</strong> Al</li>
+            <li><strong>Mass:</strong> 26.981539</li>
+            <li><strong>e⁻:</strong> 2 8 3</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Silicon</h4>
+          <ul>
+            <li><strong>No:</strong> 14</li>
+            <li><strong>Sym:</strong> Si</li>
+            <li><strong>Mass:</strong> 28.0855</li>
+            <li><strong>e⁻:</strong> 2 8 4</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Phosphorus</h4>
+          <ul>
+            <li><strong>No:</strong> 15</li>
+            <li><strong>Sym:</strong> P</li>
+            <li><strong>Mass:</strong> 30.973763</li>
+            <li><strong>e⁻:</strong> 2 8 5</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Sulfur</h4>
+          <ul>
+            <li><strong>No:</strong> 16</li>
+            <li><strong>Sym:</strong> S</li>
+            <li><strong>Mass:</strong> 32.065</li>
+            <li><strong>e⁻:</strong> 2 8 6</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Chlorine</h4>
+          <ul>
+            <li><strong>No:</strong> 17</li>
+            <li><strong>Sym:</strong> Cl</li>
+            <li><strong>Mass:</strong> 35.453</li>
+            <li><strong>e⁻:</strong> 2 8 7</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Argon</h4>
+          <ul>
+            <li><strong>No:</strong> 18</li>
+            <li><strong>Sym:</strong> Ar</li>
+            <li><strong>Mass:</strong> 39.948</li>
+            <li><strong>e⁻:</strong> 2 8 8</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="element-box">
+          <h4>Potassium</h4>
+          <ul>
+            <li><strong>No:</strong> 19</li>
+            <li><strong>Sym:</strong> K</li>
+            <li><strong>Mass:</strong> 39.0983</li>
+            <li><strong>e⁻:</strong> 2 8 8 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Calcium</h4>
+          <ul>
+            <li><strong>No:</strong> 20</li>
+            <li><strong>Sym:</strong> Ca</li>
+            <li><strong>Mass:</strong> 40.078</li>
+            <li><strong>e⁻:</strong> 2 8 8 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Scandium</h4>
+          <ul>
+            <li><strong>No:</strong> 21</li>
+            <li><strong>Sym:</strong> Sc</li>
+            <li><strong>Mass:</strong> 44.955914</li>
+            <li><strong>e⁻:</strong> 2 8 9 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Titanium</h4>
+          <ul>
+            <li><strong>No:</strong> 22</li>
+            <li><strong>Sym:</strong> Ti</li>
+            <li><strong>Mass:</strong> 47.867</li>
+            <li><strong>e⁻:</strong> 2 8 10 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Vanadium</h4>
+          <ul>
+            <li><strong>No:</strong> 23</li>
+            <li><strong>Sym:</strong> V</li>
+            <li><strong>Mass:</strong> 50.9415</li>
+            <li><strong>e⁻:</strong> 2 8 11 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Chromium</h4>
+          <ul>
+            <li><strong>No:</strong> 24</li>
+            <li><strong>Sym:</strong> Cr</li>
+            <li><strong>Mass:</strong> 51.9961</li>
+            <li><strong>e⁻:</strong> 2 8 13 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Manganese</h4>
+          <ul>
+            <li><strong>No:</strong> 25</li>
+            <li><strong>Sym:</strong> Mn</li>
+            <li><strong>Mass:</strong> 54.938046</li>
+            <li><strong>e⁻:</strong> 2 8 13 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Iron</h4>
+          <ul>
+            <li><strong>No:</strong> 26</li>
+            <li><strong>Sym:</strong> Fe</li>
+            <li><strong>Mass:</strong> 55.845</li>
+            <li><strong>e⁻:</strong> 2 8 14 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Cobalt</h4>
+          <ul>
+            <li><strong>No:</strong> 27</li>
+            <li><strong>Sym:</strong> Co</li>
+            <li><strong>Mass:</strong> 58.933193</li>
+            <li><strong>e⁻:</strong> 2 8 15 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Nickel</h4>
+          <ul>
+            <li><strong>No:</strong> 28</li>
+            <li><strong>Sym:</strong> Ni</li>
+            <li><strong>Mass:</strong> 58.6934</li>
+            <li><strong>e⁻:</strong> 2 8 16 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Copper</h4>
+          <ul>
+            <li><strong>No:</strong> 29</li>
+            <li><strong>Sym:</strong> Cu</li>
+            <li><strong>Mass:</strong> 63.546</li>
+            <li><strong>e⁻:</strong> 2 8 18 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Zinc</h4>
+          <ul>
+            <li><strong>No:</strong> 30</li>
+            <li><strong>Sym:</strong> Zn</li>
+            <li><strong>Mass:</strong> 65.38</li>
+            <li><strong>e⁻:</strong> 2 8 18 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Gallium</h4>
+          <ul>
+            <li><strong>No:</strong> 31</li>
+            <li><strong>Sym:</strong> Ga</li>
+            <li><strong>Mass:</strong> 69.723</li>
+            <li><strong>e⁻:</strong> 2 8 18 3</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Germanium</h4>
+          <ul>
+            <li><strong>No:</strong> 32</li>
+            <li><strong>Sym:</strong> Ge</li>
+            <li><strong>Mass:</strong> 72.63</li>
+            <li><strong>e⁻:</strong> 2 8 18 4</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Arsenic</h4>
+          <ul>
+            <li><strong>No:</strong> 33</li>
+            <li><strong>Sym:</strong> As</li>
+            <li><strong>Mass:</strong> 74.9216</li>
+            <li><strong>e⁻:</strong> 2 8 18 5</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Selenium</h4>
+          <ul>
+            <li><strong>No:</strong> 34</li>
+            <li><strong>Sym:</strong> Se</li>
+            <li><strong>Mass:</strong> 78.96</li>
+            <li><strong>e⁻:</strong> 2 8 18 6</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Bromine</h4>
+          <ul>
+            <li><strong>No:</strong> 35</li>
+            <li><strong>Sym:</strong> Br</li>
+            <li><strong>Mass:</strong> 79.904</li>
+            <li><strong>e⁻:</strong> 2 8 18 7</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Krypton</h4>
+          <ul>
+            <li><strong>No:</strong> 36</li>
+            <li><strong>Sym:</strong> Kr</li>
+            <li><strong>Mass:</strong> 83.798</li>
+            <li><strong>e⁻:</strong> 2 8 18 8</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="element-box">
+          <h4>Rubidium</h4>
+          <ul>
+            <li><strong>No:</strong> 37</li>
+            <li><strong>Sym:</strong> Rb</li>
+            <li><strong>Mass:</strong> 85.4678</li>
+            <li><strong>e⁻:</strong> 2 8 18 8 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Strontium</h4>
+          <ul>
+            <li><strong>No:</strong> 38</li>
+            <li><strong>Sym:</strong> Sr</li>
+            <li><strong>Mass:</strong> 87.62</li>
+            <li><strong>e⁻:</strong> 2 8 18 8 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Yttrium</h4>
+          <ul>
+            <li><strong>No:</strong> 39</li>
+            <li><strong>Sym:</strong> Y</li>
+            <li><strong>Mass:</strong> 88.90585</li>
+            <li><strong>e⁻:</strong> 2 8 18 9 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Zirconium</h4>
+          <ul>
+            <li><strong>No:</strong> 40</li>
+            <li><strong>Sym:</strong> Zr</li>
+            <li><strong>Mass:</strong> 91.224</li>
+            <li><strong>e⁻:</strong> 2 8 18 10 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Niobium</h4>
+          <ul>
+            <li><strong>No:</strong> 41</li>
+            <li><strong>Sym:</strong> Nb</li>
+            <li><strong>Mass:</strong> 92.90638</li>
+            <li><strong>e⁻:</strong> 2 8 18 12 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Molybdenum</h4>
+          <ul>
+            <li><strong>No:</strong> 42</li>
+            <li><strong>Sym:</strong> Mo</li>
+            <li><strong>Mass:</strong> 95.96</li>
+            <li><strong>e⁻:</strong> 2 8 18 13 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Technetium</h4>
+          <ul>
+            <li><strong>No:</strong> 43</li>
+            <li><strong>Sym:</strong> Tc</li>
+            <li><strong>Mass:</strong> 98</li>
+            <li><strong>e⁻:</strong> 2 8 18 13 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Ruthenium</h4>
+          <ul>
+            <li><strong>No:</strong> 44</li>
+            <li><strong>Sym:</strong> Ru</li>
+            <li><strong>Mass:</strong> 101.07</li>
+            <li><strong>e⁻:</strong> 2 8 18 15 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Rhodium</h4>
+          <ul>
+            <li><strong>No:</strong> 45</li>
+            <li><strong>Sym:</strong> Rh</li>
+            <li><strong>Mass:</strong> 102.9055</li>
+            <li><strong>e⁻:</strong> 2 8 18 16 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Palladium</h4>
+          <ul>
+            <li><strong>No:</strong> 46</li>
+            <li><strong>Sym:</strong> Pd</li>
+            <li><strong>Mass:</strong> 106.42</li>
+            <li><strong>e⁻:</strong> 2 8 18 18</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Silver</h4>
+          <ul>
+            <li><strong>No:</strong> 47</li>
+            <li><strong>Sym:</strong> Ag</li>
+            <li><strong>Mass:</strong> 107.8682</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Cadmium</h4>
+          <ul>
+            <li><strong>No:</strong> 48</li>
+            <li><strong>Sym:</strong> Cd</li>
+            <li><strong>Mass:</strong> 112.411</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Indium</h4>
+          <ul>
+            <li><strong>No:</strong> 49</li>
+            <li><strong>Sym:</strong> In</li>
+            <li><strong>Mass:</strong> 114.818</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 3</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Tin</h4>
+          <ul>
+            <li><strong>No:</strong> 50</li>
+            <li><strong>Sym:</strong> Sn</li>
+            <li><strong>Mass:</strong> 118.71</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 4</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Antimony</h4>
+          <ul>
+            <li><strong>No:</strong> 51</li>
+            <li><strong>Sym:</strong> Sb</li>
+            <li><strong>Mass:</strong> 121.76</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 5</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Tellurium</h4>
+          <ul>
+            <li><strong>No:</strong> 52</li>
+            <li><strong>Sym:</strong> Te</li>
+            <li><strong>Mass:</strong> 127.6</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 6</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Iodine</h4>
+          <ul>
+            <li><strong>No:</strong> 53</li>
+            <li><strong>Sym:</strong> I</li>
+            <li><strong>Mass:</strong> 126.90447</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 7</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Xenon</h4>
+          <ul>
+            <li><strong>No:</strong> 54</li>
+            <li><strong>Sym:</strong> Xe</li>
+            <li><strong>Mass:</strong> 131.293</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 8</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="element-box">
+          <h4>Caesium</h4>
+          <ul>
+            <li><strong>No:</strong> 55</li>
+            <li><strong>Sym:</strong> Cs</li>
+            <li><strong>Mass:</strong> 132.90546</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 8 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Barium</h4>
+          <ul>
+            <li><strong>No:</strong> 56</li>
+            <li><strong>Sym:</strong> Ba</li>
+            <li><strong>Mass:</strong> 137.327</li>
+            <li><strong>e⁻:</strong> 2 8 18 18 8 2</li>
+          </ul>
+        </td>
+        <td class="empty-box"></td>
+        <td class="element-box">
+          <h4>Hafnium</h4>
+          <ul>
+            <li><strong>No:</strong> 72</li>
+            <li><strong>Sym:</strong> Hf</li>
+            <li><strong>Mass:</strong> 178.49</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 10 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Tantalum</h4>
+          <ul>
+            <li><strong>No:</strong> 73</li>
+            <li><strong>Sym:</strong> Ta</li>
+            <li><strong>Mass:</strong> 180.94788</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 11 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Tungsten</h4>
+          <ul>
+            <li><strong>No:</strong> 74</li>
+            <li><strong>Sym:</strong> W</li>
+            <li><strong>Mass:</strong> 183.84</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 12 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Rhenium</h4>
+          <ul>
+            <li><strong>No:</strong> 75</li>
+            <li><strong>Sym:</strong> Re</li>
+            <li><strong>Mass:</strong> 186.207</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 13 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Osmium</h4>
+          <ul>
+            <li><strong>No:</strong> 76</li>
+            <li><strong>Sym:</strong> Os</li>
+            <li><strong>Mass:</strong> 190.23</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 14 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Iridium</h4>
+          <ul>
+            <li><strong>No:</strong> 77</li>
+            <li><strong>Sym:</strong> Ir</li>
+            <li><strong>Mass:</strong> 192.217</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 15 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Platinum</h4>
+          <ul>
+            <li><strong>No:</strong> 78</li>
+            <li><strong>Sym:</strong> Pt</li>
+            <li><strong>Mass:</strong> 195.084</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 17 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Gold</h4>
+          <ul>
+            <li><strong>No:</strong> 79</li>
+            <li><strong>Sym:</strong> Au</li>
+            <li><strong>Mass:</strong> 196.96657</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Mercury</h4>
+          <ul>
+            <li><strong>No:</strong> 80</li>
+            <li><strong>Sym:</strong> Hg</li>
+            <li><strong>Mass:</strong> 200.59</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Thallium</h4>
+          <ul>
+            <li><strong>No:</strong> 81</li>
+            <li><strong>Sym:</strong> Tl</li>
+            <li><strong>Mass:</strong> 204.3833</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 3</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Lead</h4>
+          <ul>
+            <li><strong>No:</strong> 82</li>
+            <li><strong>Sym:</strong> Pb</li>
+            <li><strong>Mass:</strong> 207.2</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 4</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Bismuth</h4>
+          <ul>
+            <li><strong>No:</strong> 83</li>
+            <li><strong>Sym:</strong> Bi</li>
+            <li><strong>Mass:</strong> 208.9804</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 5</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Polonium</h4>
+          <ul>
+            <li><strong>No:</strong> 84</li>
+            <li><strong>Sym:</strong> Po</li>
+            <li><strong>Mass:</strong> 209</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 6</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Astatine</h4>
+          <ul>
+            <li><strong>No:</strong> 85</li>
+            <li><strong>Sym:</strong> At</li>
+            <li><strong>Mass:</strong> 210</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 7</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Radon</h4>
+          <ul>
+            <li><strong>No:</strong> 86</li>
+            <li><strong>Sym:</strong> Rn</li>
+            <li><strong>Mass:</strong> 222</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 8</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="element-box">
+          <h4>Francium</h4>
+          <ul>
+            <li><strong>No:</strong> 87</li>
+            <li><strong>Sym:</strong> Fr</li>
+            <li><strong>Mass:</strong> 223</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 8 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Radium</h4>
+          <ul>
+            <li><strong>No:</strong> 88</li>
+            <li><strong>Sym:</strong> Ra</li>
+            <li><strong>Mass:</strong> 226</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 18 8 2</li>
+          </ul>
+        </td>
+        <td class="empty-box"></td>
+        <td class="element-box">
+          <h4>Rutherfordium</h4>
+          <ul>
+            <li><strong>No:</strong> 104</li>
+            <li><strong>Sym:</strong> Rf</li>
+            <li><strong>Mass:</strong> 267</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 10 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Dubnium</h4>
+          <ul>
+            <li><strong>No:</strong> 105</li>
+            <li><strong>Sym:</strong> Db</li>
+            <li><strong>Mass:</strong> 268</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 11 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Seaborgium</h4>
+          <ul>
+            <li><strong>No:</strong> 106</li>
+            <li><strong>Sym:</strong> Sg</li>
+            <li><strong>Mass:</strong> 271</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 12 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Bohrium</h4>
+          <ul>
+            <li><strong>No:</strong> 107</li>
+            <li><strong>Sym:</strong> Bh</li>
+            <li><strong>Mass:</strong> 272</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 13 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Hassium</h4>
+          <ul>
+            <li><strong>No:</strong> 108</li>
+            <li><strong>Sym:</strong> Hs</li>
+            <li><strong>Mass:</strong> 270</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 14 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Meitnerium</h4>
+          <ul>
+            <li><strong>No:</strong> 109</li>
+            <li><strong>Sym:</strong> Mt</li>
+            <li><strong>Mass:</strong> 276</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 15 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Darmstadtium</h4>
+          <ul>
+            <li><strong>No:</strong> 110</li>
+            <li><strong>Sym:</strong> Ds</li>
+            <li><strong>Mass:</strong> 281</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 17 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Roentgenium</h4>
+          <ul>
+            <li><strong>No:</strong> 111</li>
+            <li><strong>Sym:</strong> Rg</li>
+            <li><strong>Mass:</strong> 280</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 1</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Copernicium</h4>
+          <ul>
+            <li><strong>No:</strong> 112</li>
+            <li><strong>Sym:</strong> Cn</li>
+            <li><strong>Mass:</strong> 285</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 2</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Ununtrium</h4>
+          <ul>
+            <li><strong>No:</strong> 113</li>
+            <li><strong>Sym:</strong> Uut</li>
+            <li><strong>Mass:</strong> 284</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 3</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Flerovium</h4>
+          <ul>
+            <li><strong>No:</strong> 114</li>
+            <li><strong>Sym:</strong> Fl</li>
+            <li><strong>Mass:</strong> 289</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 4</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Ununpentium</h4>
+          <ul>
+            <li><strong>No:</strong> 115</li>
+            <li><strong>Sym:</strong> Uup</li>
+            <li><strong>Mass:</strong> 288</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 5</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Livermorium</h4>
+          <ul>
+            <li><strong>No:</strong> 116</li>
+            <li><strong>Sym:</strong> Lv</li>
+            <li><strong>Mass:</strong> 293</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 6</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Ununseptium</h4>
+          <ul>
+            <li><strong>No:</strong> 117</li>
+            <li><strong>Sym:</strong> Uus</li>
+            <li><strong>Mass:</strong> 294</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 7</li>
+          </ul>
+        </td>
+        <td class="element-box">
+          <h4>Ununoctium</h4>
+          <ul>
+            <li><strong>No:</strong> 118</li>
+            <li><strong>Sym:</strong> Uuo</li>
+            <li><strong>Mass:</strong> 294</li>
+            <li><strong>e⁻:</strong> 2 8 18 32 32 18 8</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

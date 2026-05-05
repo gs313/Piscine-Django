@@ -1,5 +1,4 @@
 def get_people():
-    """Returns the list of couples as provided."""
     d = [
     ('Hendrix' , '1942'),
     ('Allman' , '1946'),

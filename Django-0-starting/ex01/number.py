@@ -14,7 +14,7 @@ def read_numbers(filename="numbers.txt"):
 
             try:
                 number = float(clean_val)
-                print(number)
+                print(clean_val)
             except ValueError:
                 print(f"Skipping invalid data: '{clean_val}' is not a number.")
     except FileNotFoundError:

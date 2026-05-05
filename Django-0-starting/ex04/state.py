@@ -20,7 +20,7 @@ def main():
 
     city = sys.argv[1]
 
-    found_state = "Unknown state"
+    found_state = "Unknown capital city"
 
     for abbrev, cap in capital_cities.items():
         if cap == city:
