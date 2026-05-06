@@ -27,14 +27,11 @@ class Page:
         with open(filename, "w") as f:
             f.write(str(self))
 
-    # ---------- CORE VALIDATION ----------
 
     def _validate(self, node):
-        # Text is always valid
         if isinstance(node, Text):
             return True
 
-        # Must be Elem
         if not isinstance(node, Elem):
             self.error_msg = "Node is not an Elem or Text"
             return False

@@ -135,3 +135,7 @@ class PageTester:
 if __name__ == "__main__":
     tester = PageTester(verbose=True, show_code=False)
     tester.run()
+    print("\n" + "=" * 40)
+    print("test print\n")
+    print(Page(Html([Head(Title(Text("x"))), Body()])))
+    Page(Html([Head(Title(Text("x"))), Body()])).write_to_file("test.html")
