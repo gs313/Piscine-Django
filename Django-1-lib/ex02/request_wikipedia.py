@@ -33,7 +33,6 @@ def fetch_wikipedia_article():
             return
 
         exact_pageid = search_data["query"]["search"][0]["pageid"]
-        print(search_data)
 
         parse_params = {
             "action": "parse",
