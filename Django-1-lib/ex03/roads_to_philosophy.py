@@ -22,7 +22,6 @@ def find_roads_to_philosophy():
 
             soup = BeautifulSoup(response.text, 'html.parser')
 
-            # 1. Get the current page title
             title_tag = soup.find(id="firstHeading")
             if not title_tag:
                 print("Error: Could not find page title.")
@@ -30,7 +29,6 @@ def find_roads_to_philosophy():
 
             current_title = title_tag.text
 
-            # Check for infinite loops
             if current_title in visited_pages:
                 print("It leads to an infinite loop !")
                 return
@@ -38,38 +36,34 @@ def find_roads_to_philosophy():
             visited_pages.append(current_title)
             print(current_title)
 
-            # Check for victory
             if current_title == "Philosophy":
                 print(f"{len(visited_pages)} roads from {search_term} to philosophy !")
                 return
 
-            # 2. Find the content block
             content_div = soup.find(id="mw-content-text")
             parser_output = content_div.find(class_="mw-parser-output") or content_div
 
             first_valid_link = None
 
-            # Wikipedia Namespaces that do NOT lead to standard articles
             invalid_namespaces = [
-                '/wiki/Help:', '/wiki/File:', '/wiki/Wikipedia:',
-                '/wiki/Category:', '/wiki/Special:', '/wiki/Talk:',
-                '/wiki/Portal:', '/wiki/Template:', '/wiki/Draft:'
+                "/wiki/Help:", "/wiki/Help_talk:", "/wiki/File:", "/wiki/File_talk:",
+                "/wiki/Wikipedia:", "/wiki/Wikipedia_talk:", "/wiki/WP:", "/wiki/Special:",
+                "/wiki/Category:", "/wiki/Category_talk:", "/wiki/Portal:", "/wiki/Portal_talk:",
+                "/wiki/Talk:", "/wiki/Template:", "/wiki/Template_talk:", "/wiki/Draft:",
+                "/wiki/Draft_talk:", "/wiki/Module:", "/wiki/Module_talk:", "/wiki/Media:",
+                "/wiki/MediaWiki:", "/wiki/MediaWiki_talk:", "/wiki/User:", "/wiki/User_talk:",
+                "/wiki/Gadget:", "/wiki/Gadget_talk:", "/wiki/Gadget_definition:",
+                "/wiki/Gadget_definition_talk:", "/wiki/TimedText:", "/wiki/TimedText_talk:"
             ]
 
-            # Iterate through all paragraphs in the content body
             for p in parser_output.find_all('p'):
-                # Skip paragraphs that are trapped inside tables or side infoboxes
                 if p.find_parent('table') or p.find_parent(class_='infobox'):
                     continue
 
                 for link in p.find_all('a'):
                     href = link.get('href', '')
 
-                    # - Must be an internal wiki link
-                    # - Must not be a citation (starts with #)
                     if href.startswith('/wiki/') and not href.startswith('#'):
-
-                        # - Must not be in the blacklist of system/help namespaces
                         is_valid_article = True
                         for ns in invalid_namespaces:
                             if href.startswith(ns):
@@ -78,17 +72,15 @@ def find_roads_to_philosophy():
 
                         if is_valid_article:
                             first_valid_link = href
-                            break # Found the first valid link in this paragraph!
+                            break
 
                 if first_valid_link:
-                    break # Found the first valid link overall!
+                    break
 
-            # 3. Dead end check
             if not first_valid_link:
                 print("It leads to a dead end !")
                 return
 
-            # Set the URL for the next hop
             url = f"https://en.wikipedia.org{first_valid_link}"
 
     except requests.exceptions.RequestException as e:
