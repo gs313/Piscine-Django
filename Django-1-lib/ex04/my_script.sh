@@ -8,4 +8,4 @@ pip install --upgrade pip
 
 pip install -r requirement.txt
 
-exec bash --rcfile <(echo " django_venv/bin/activate")
+exec bash --rcfile <(echo "source django_venv/bin/activate")
