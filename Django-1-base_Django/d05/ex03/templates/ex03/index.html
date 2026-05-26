@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03: Fifty shades of bic</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            height: 40px;
+            width: 80px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fifty Shades of Bic</h1>
+
+    <table>
+        <tr>
+            <th>Noir</th>
+            <th>Rouge</th>
+            <th>Bleu</th>
+            <th>Vert</th>
+        </tr>
+
+        {% for row in shades %}
+        <tr>
+            <td style="background-color: {{ row.noir }};"></td>
+            <td style="background-color: {{ row.rouge }};"></td>
+            <td style="background-color: {{ row.bleu }};"></td>
+            <td style="background-color: {{ row.vert }};"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

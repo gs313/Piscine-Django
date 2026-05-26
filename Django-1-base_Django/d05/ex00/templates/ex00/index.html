@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex00: Markdown Cheatsheet.</title>
+</head>
+<body>
+    <h1>Markdown Cheatsheet (Comprehensive)</h1>
+
+    <h2>1. Headers</h2>
+    <p>
+        # H1<br>
+        ## H2<br>
+        ### H3<br>
+        #### H4<br>
+        ##### H5<br>
+        ###### H6
+    </p>
+    <p>Alternatively, for H1 and H2:<br>
+        Heading 1<br>
+        =========<br>
+        Heading 2<br>
+        ---------
+    </p>
+
+    <hr>
+
+    <h2>2. Emphasis</h2>
+    <p>
+        *Italics* or _Italics_<br>
+        **Bold** or __Bold__<br>
+        ***Bold and Italics*** or ___Bold and Italics___<br>
+        ~~Strikethrough~~
+    </p>
+
+    <hr>
+
+    <h2>3. Lists</h2>
+    <h3>Unordered Lists</h3>
+    <p>
+        * Item 1<br>
+        * Item 2<br>
+        &nbsp;&nbsp;* Nested Item 2a<br>
+        &nbsp;&nbsp;* Nested Item 2b
+    </p>
+    <p><em>(You can also use + or - for unordered lists)</em></p>
+
+    <h3>Ordered Lists</h3>
+    <p>
+        1. First item<br>
+        2. Second item<br>
+        3. Third item
+    </p>
+
+    <h3>Task Lists</h3>
+    <p>
+        - [x] Completed task<br>
+        - [ ] Incomplete task
+    </p>
+
+    <hr>
+
+    <h2>4. Links</h2>
+    <p>
+        <strong>Inline Link:</strong> [OpenAI](https://openai.com)<br>
+        <strong>Link with Title:</strong> [OpenAI](https://openai.com "OpenAI Homepage")<br>
+        <strong>Reference Link:</strong> [OpenAI][1]<br>
+        ...later in the document...<br>
+        [1]: https://openai.com
+    </p>
+
+    <hr>
+
+    <h2>5. Images</h2>
+    <p>
+        <strong>Inline Image:</strong> ![Alt text](image-url.jpg)<br>
+        <strong>Image with Title:</strong> ![Alt text](image-url.jpg "Image Title")<br>
+        <strong>Linked Image:</strong> [![Alt text](image-url.jpg)](https://example.com)
+    </p>
+
+    <hr>
+
+    <h2>6. Blockquotes</h2>
+    <p>
+        > This is a blockquote.<br>
+        > It can span multiple lines.<br>
+        >> And it can be nested!
+    </p>
+
+    <hr>
+
+    <h2>7. Code</h2>
+    <p>
+        <strong>Inline Code:</strong> Use the `printf()` function.<br>
+        <strong>Code Blocks:</strong><br>
+        ```python<br>
+        def hello_world():<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;print("Hello World")<br>
+        ```
+    </p>
+
+    <hr>
+
+    <h2>8. Tables</h2>
+    <p>
+        | Syntax      | Description |<br>
+        | ----------- | ----------- |<br>
+        | Header      | Title       |<br>
+        | Paragraph   | Text        |<br>
+    </p>
+    <p><em>Alignment:</em><br>
+        | Left-aligned | Center-aligned | Right-aligned |<br>
+        | :---         |     :---:      |          ---: |
+    </p>
+
+    <hr>
+
+    <h2>9. Horizontal Rules</h2>
+    <p>You can use three or more asterisks, dashes, or underscores:</p>
+    <p>
+        ***<br>
+        ---<br>
+        ___
+    </p>
+
+    <hr>
+
+    <h2>10. Escaping Characters</h2>
+    <p>If you need to use a literal character that would otherwise trigger Markdown formatting, escape it with a backslash `\`.</p>
+    <p>\*This will not be italicized\*</p>
+</body>
+</html>

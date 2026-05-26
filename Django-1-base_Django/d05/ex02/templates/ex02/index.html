@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02: First Form</title>
+    <style>
+        .history-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Form</h1>
+
+    <form method="POST" action="/ex02/">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    <h2>Input History</h2>
+    <div class="history-box">
+        {% if history %}
+            <ul>
+                {% for entry in history %}
+                    <li>{{ entry }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No history available yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
