@@ -19,3 +19,5 @@ def shades_view(request):
         })
 
     return render(request, 'ex03/index.html', {'shades': shades})
+    # We want 50 steps. To go from 0 to 255 evenly over 50 steps,
+    # we divide 255 by 49 (since index goes from 0 to 49).
